@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddProductScreen">
+   <center>
+      <HBox prefHeight="206.0" prefWidth="580.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+         </BorderPane.margin>
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="247.0" prefWidth="0.0" spacing="15.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label prefHeight="25.2" text="ID" />
+                  <Label layoutX="56.0" layoutY="98.0" prefHeight="25.2" text="Name" />
+                  <Label layoutX="56.0" layoutY="106.0" prefHeight="25.2" text="Inv" />
+                  <Label layoutX="56.0" layoutY="115.0" prefHeight="25.2" text="Price" />
+                  <Label layoutX="56.0" layoutY="124.0" prefHeight="25.2" text="Max" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="247.0" prefWidth="80.0" spacing="15.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <TextField fx:id="prodIdTxt" />
+                  <TextField fx:id="prodNameTxt" layoutX="10.0" layoutY="94.0" />
+                  <TextField fx:id="prodInvTxt" layoutX="10.0" layoutY="106.0" prefWidth="56.0" />
+                  <TextField fx:id="prodPriceTxt" layoutX="10.0" layoutY="119.0" prefHeight="25.0" prefWidth="77.0" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.2" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="prodMaxTxt" prefHeight="25.0" prefWidth="56.0" />
+                        <Region prefHeight="25.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                        <Label text="Min" />
+                        <Region prefHeight="25.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="prodMinTxt" prefHeight="25.0" prefWidth="47.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="247.0" prefWidth="277.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <BorderPane prefHeight="228.0" prefWidth="335.0">
+                     <center>
+                        <TableView fx:id="prodAddTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="prodAddTableIdColumn" prefWidth="65.5999755859375" text="Product ID" />
+                              <TableColumn fx:id="prodAddTableNameColumn" prefWidth="112.800048828125" text="Product Name" />
+                              <TableColumn fx:id="prodAddTableInvColumn" prefWidth="92.80001831054688" text="Inventory Level" />
+                              <TableColumn fx:id="prodAddTableCostColumn" prefWidth="63.59991455078125" text="Price/Unit" />
+                           </columns>
+                        </TableView>
+                     </center>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                     <bottom>
+                        <HBox alignment="BOTTOM_RIGHT" prefHeight="0.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="prodAddButton" mnemonicParsing="false" onAction="#addPartToProd" text="Add">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="prodDelTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="prodDelTableIdColumn" prefWidth="65.5999755859375" text="Product ID" />
+                              <TableColumn fx:id="prodDelTableNameColumn" prefWidth="114.4000244140625" text="Product Name" />
+                              <TableColumn fx:id="prodDelTableInvColumn" prefWidth="91.60000610351562" text="Inventory Level" />
+                              <TableColumn fx:id="prodDelTableCostColumn" prefWidth="62.79998779296875" text="Price/Unit" />
+                           </columns>
+                        </TableView>
+                     </center>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </BorderPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <HBox prefHeight="37.0" prefWidth="580.0" BorderPane.alignment="CENTER_RIGHT">
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="5.0" />
+         </BorderPane.margin>
+         <children>
+            <Region prefHeight="100.0" prefWidth="372.0" HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="98.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Region prefHeight="40.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                  <Button fx:id="prodSaveButton" mnemonicParsing="false" onAction="#saveProd" text="Save" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="41.0" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="prodDeleteButton" mnemonicParsing="false" onAction="#removePartFromProd" text="Delete" />
+                  <Button fx:id="prodCancelButton" mnemonicParsing="false" onAction="#cancelAddProd" text="Cancel" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="560.0" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="130.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="113.0" text="Add Product" textFill="#2a8cb6">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="274.0" spacing="15.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="prodSearchButton" mnemonicParsing="false" onAction="#partSearchClick" text="Search" />
+                  <TextField fx:id="addProdSearchTxt" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+</BorderPane>
